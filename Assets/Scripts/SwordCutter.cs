@@ -30,7 +30,7 @@ public class SwordCutter : MonoBehaviour
             upperHull.AddComponent<Rigidbody>();
             lowerHull.AddComponent<Rigidbody>();
 
-            //加入Collider穿過地板
+            //加入Collider避免穿過地板
             upperHull.AddComponent<BoxCollider>();
             lowerHull.AddComponent<BoxCollider>();
         }
