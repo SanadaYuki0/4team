@@ -10,6 +10,10 @@ public class SwordCutter : MonoBehaviour
     GameObject target;
     public Material capMaterial;
 
+    private void Awake()
+    {
+        enabled = false;
+    }
 
     private void OnCollisionEnter(Collision other)
     {
