@@ -22,7 +22,7 @@ public class SwordCutter : MonoBehaviour
 
         target = other.collider.gameObject;
         Vector3 swordWorldPosition = gameObject.transform.position;
-        Vector3 swordWorldDirection = gameObject.transform.right;
+        Vector3 swordWorldDirection = gameObject.transform.up;
         SlicedHull hull = target.Slice(swordWorldPosition, gameObject.transform.up, capMaterial);
 
         if (hull != null)
@@ -38,11 +38,9 @@ public class SwordCutter : MonoBehaviour
             upperHull.AddComponent<BoxCollider>();
             lowerHull.AddComponent<BoxCollider>();
         }
-
-
     }
 
-    // private void OnTriggerEnter(Collider other)
+    // private void OnTriggerExit(Collider other)
     // {
     //     target = other.gameObject;
     //     Debug.Log(other.gameObject.name);
