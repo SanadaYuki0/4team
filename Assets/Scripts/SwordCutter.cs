@@ -9,6 +9,7 @@ public class SwordCutter : MonoBehaviour
 {
     GameObject target;
     public Material capMaterial;
+    [SerializeField] float force;
 
     private void Awake()
     {
@@ -31,12 +32,14 @@ public class SwordCutter : MonoBehaviour
             GameObject lowerHull = hull.CreateUpperHull(target, capMaterial);
 
             target.SetActive(false);
-            upperHull.AddComponent<Rigidbody>();
+            upperHull.AddComponent<Rigidbody>().AddForce(transform.forward * force);
             lowerHull.AddComponent<Rigidbody>();
 
             //加入Collider避免穿過地板
             upperHull.AddComponent<BoxCollider>();
             lowerHull.AddComponent<BoxCollider>();
+
+
         }
     }
 
