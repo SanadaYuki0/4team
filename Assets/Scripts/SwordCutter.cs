@@ -8,12 +8,13 @@ using EzySlice;
 public class SwordCutter : MonoBehaviour
 {
     GameObject target;
+    public GameObject shoter;
     public Material capMaterial;
     [SerializeField] float force;
 
     private void Awake()
     {
-        enabled = false;
+       
     }
 
     private void OnCollisionEnter(Collision other)
@@ -26,6 +27,11 @@ public class SwordCutter : MonoBehaviour
         Vector3 swordWorldDirection = gameObject.transform.up;
         SlicedHull hull = target.Slice(swordWorldPosition, gameObject.transform.up, capMaterial);
 
+        if (target.CompareTag("StartCube")) {
+            Debug.Log(other.collider.gameObject.name);
+            shoter.SetActive(true);
+            Destroy(target);
+        }
         if (hull != null)
         {
             GameObject upperHull = hull.CreateLowerHull(target, capMaterial);

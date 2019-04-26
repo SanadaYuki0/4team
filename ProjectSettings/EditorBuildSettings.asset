@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/ThirdParty/VRSample/VRSampleScenes/Scenes/MainMenu.unity
+    guid: 3959fdef1e02d4d4fb01414c7de44414
+  - enabled: 1
+    path: Assets/Scenes/JapanSamurai.unity
+    guid: 7ffb478aecf9a1b4bb5b7fec4a73e86e
   m_configObjects: {}

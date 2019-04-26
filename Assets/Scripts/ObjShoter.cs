@@ -13,6 +13,7 @@ public class ObjShoter : MonoBehaviour
 
     public Vector3 Upvector;
     public float Xvector;
+    float ScaleVul;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,10 @@ public class ObjShoter : MonoBehaviour
             Objcopy.GetComponent<Rigidbody>().isKinematic = false;
             Upvector.x = Random.Range(-60f, 60f);
             Upvector.y = Random.Range(380f, 420f);
-            Upvector.z = 500;
+            Upvector.z = Random.Range(400f, 500f);
+            
+            ScaleVul = Random.Range(0.1f, 0.6f);
+            Objcopy.transform.localScale = new Vector3(ScaleVul, ScaleVul, ScaleVul);
             Objcopy.GetComponent<Rigidbody>().AddForce(Upvector);
             Objcopy.GetComponent<Rigidbody>().AddTorque(Random.Range(-100f, 100f), Random.Range(-100f, 100f), Random.Range(-100f, 100f));
 
